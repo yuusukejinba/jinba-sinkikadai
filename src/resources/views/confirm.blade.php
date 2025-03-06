@@ -30,17 +30,17 @@
                 <table class="confirm__table">
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">お名前</th>
-                            <td class="confirm__table__text">
-                                <input type="text" name="name" value="{{$contact['name']}}" />
-                            </td>
+                            <td class="confirm__table__text">{{$contact['name']}}</td>
+                            <input type="hidden" name="name" value="{{$contact['name']}}" />
+                            
                     </tr>
                 
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">電話番号</th>
-                            <td class="confirm__table__text">
-                                <input type="tel" name="tel"  value="{{$contact['tel__1']}}{{$contact['tel__2']}}{{$contact['tel__3']}}" />
-                                                              
-                            </td>
+                            <td class="confirm__table__text">{{ $contact['tel__1'] }}{{ $contact['tel__2'] }}{{ $contact['tel__3'] }}</td>
+                            <input type="hidden" name="tel__1" value="{{ $contact['tel__1'] }}">
+                            <input type="hidden" name="tel__2" value="{{ $contact['tel__2'] }}">
+                            <input type="hidden" name="tel__3" value="{{ $contact['tel__3'] }}">
                     </tr>
                 </table>
             </div>
