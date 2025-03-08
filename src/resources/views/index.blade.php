@@ -62,6 +62,28 @@
                 </div>
             </div>
 
+            <div class="form__group__input">
+                <div class="form__group__input__text">
+                    <span class="form__group__label">お問い合わせの種類</span>
+                    <span class="form__group__required">※</span>
+                </div> 
+                   
+                <div>
+                    <select class="form__group__input__select " name="item_id">
+                        <option value="">問い合わせの部品を選択</option>
+                        <option value="1">商品A</option>
+                        <option value="2">商品B</option>
+                        <option value="3">商品C</option>
+                    </select>
+                </div>    
+
+                <div class="form__Validation">
+                    <!--バリデーション機能-->
+                </div>
+            </div>
+
+
+
             <div class="form__button">
                 <button class="form__button-submit" type="submit">確認画面</button>
             </div>

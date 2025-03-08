@@ -42,6 +42,19 @@
                             <input type="hidden" name="tel__2" value="{{ $contact['tel__2'] }}">
                             <input type="hidden" name="tel__3" value="{{ $contact['tel__3'] }}">
                     </tr>
+
+                    <tr class="confirm__table__inner">
+                        <th class="confirm__table__name">お問い合わせの種類</th>
+                            <td class="confirm__table__text">{{ $contact['item_id'] }}</td>
+                            <input type="hidden" name="item_id" value="{{ $contact['item_id'] }}">
+                            
+                    </tr>
+
+
+
+
+
+
                 </table>
             </div>
 

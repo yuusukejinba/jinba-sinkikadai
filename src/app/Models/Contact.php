@@ -4,13 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Controllers\ContactController;
+
 
 class Contact extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name' , 'tel'
+        'item_id',
+        'name' ,
+        'tel' , 
+
       ];
+
+      public function item()
+
+      {
+        return $this->belongsTo(item::class);
+      }
+
 }
