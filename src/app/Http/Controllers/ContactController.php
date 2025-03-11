@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function index()
     {
         
-        $items = item::all();
+        $items = Item::all();
         
         return view('index' , compact('items'));
     }
