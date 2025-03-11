@@ -11,8 +11,9 @@ class ContactController extends Controller
     public function index()
     {
         
-
-        return view('index');
+        $items = item::all();
+        
+        return view('index' , compact('items'));
     }
 
     
@@ -21,11 +22,12 @@ class ContactController extends Controller
     {
         
 
-        $contact = $request->only(['name', 'item_id' ,  'tel__1' , 'tel__2' , 'tel__3']);
+        $contact = $request->all();
 
+        $item = item::find($request->id);
         
         
-        return view('confirm' , compact('contact'));
+        return view('confirm' , compact('contact' , 'item'));
     }
 
     public function store(Request $request)
@@ -39,6 +41,14 @@ class ContactController extends Controller
         ];    
         
         Contact::create($form);
+        $request = only([
+
+            'item_id' ,
+            'name' ,
+            'tel',
+        ]);
+
+        
 
         return view('/thanks');
     }

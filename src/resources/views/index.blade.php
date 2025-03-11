@@ -69,11 +69,11 @@
                 </div> 
                    
                 <div>
-                    <select class="form__group__input__select " name="item_id">
-                        <option value="">問い合わせの部品を選択</option>
-                        <option value="1">商品A</option>
-                        <option value="2">商品B</option>
-                        <option value="3">商品C</option>
+                    <select class="form__group__input__select " name="item_id" >
+                        <option disabled selected>問い合わせの部品を選択</option>
+                        @foreach($items as $item)
+                        <option value="{{$item->item_id}}">{{$item->content}}</option>
+                        @endforeach
                     </select>
                 </div>    
 

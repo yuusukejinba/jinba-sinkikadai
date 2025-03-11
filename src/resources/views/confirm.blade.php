@@ -45,8 +45,9 @@
 
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">お問い合わせの種類</th>
-                            <td class="confirm__table__text">{{ $contact['item_id'] }}</td>
-                            <input type="hidden" name="item_id" value="{{ $contact['item_id'] }}">
+                            <td class="confirm__table__text">{{ $contact['content'] }}</td>
+                            <input type="text" name="item_content" value="{{$item->content}}" readonly>
+                            <input type="hidden" name="item_id" value="{{$item->id}}">
                             
                     </tr>
 
