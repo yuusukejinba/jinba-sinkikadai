@@ -24,7 +24,7 @@ class ContactController extends Controller
 
         $contact = $request->all();
 
-        $item = item::find($request->id);
+        $item = Item::find($request->item_id);
         
         
         return view('confirm' , compact('contact' , 'item'));
@@ -35,18 +35,14 @@ class ContactController extends Controller
         $request['tel'] = $request->tel__1 . $request->tel__2 . $request->tel__3;
         
         $form = [
-            'item_id' => $request->item_id,
+            'item_id' => $request->item_id,            
             'name' => $request->name,           
             'tel' => $request->tel,
         ];    
         
         Contact::create($form);
-        $request = only([
-
-            'item_id' ,
-            'name' ,
-            'tel',
-        ]);
+        
+       
 
         
 

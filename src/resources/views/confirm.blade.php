@@ -23,7 +23,7 @@
                 <h2>Confirm</h2>
             </div>
         </div>
-
+        
         <form class="form" action="/thanks" method="post">
             @csrf
             <div class="form__table">
@@ -45,8 +45,9 @@
 
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">お問い合わせの種類</th>
-                            <td class="confirm__table__text">{{ $contact['content'] }}</td>
-                            <input type="text" name="item_content" value="{{$item->content}}" readonly>
+                        
+                            <td class="confirm__table__text">{{ $item['content'] }}</td>
+                            <input type="text" name="item_content" value="{{$item->item_content}}">
                             <input type="hidden" name="item_id" value="{{$item->id}}">
                             
                     </tr>

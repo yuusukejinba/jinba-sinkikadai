@@ -72,7 +72,7 @@
                     <select class="form__group__input__select " name="item_id" >
                         <option disabled selected>問い合わせの部品を選択</option>
                         @foreach($items as $item)
-                        <option value="{{$item->item_id}}">{{$item->content}}</option>
+                        <option value="{{$item->id}} {{$item->content}}">{{$item->content}}</option>
                         @endforeach
                     </select>
                 </div>    
