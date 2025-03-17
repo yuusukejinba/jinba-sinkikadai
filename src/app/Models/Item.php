@@ -13,9 +13,9 @@ class Item extends Model
     protected $fillable = ['content'];
     
 
-    public function contact()
+    public function contacts()
     {
-        return $this->hasMany('App\Models\'contact');
+        return $this->hasMany('Contact::class');
     }
     
     }

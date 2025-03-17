@@ -53,7 +53,19 @@ class ContactController extends Controller
 
         return view('thanks');
     }
+
+    public function admin()
+    {
+        $contact = Contact::all();
+        $item = Item::all();
+
+
+
+        return view('admin', compact('contact' , 'item'));
+    }
 }
+
+
 
 
 
