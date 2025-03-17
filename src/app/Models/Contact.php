@@ -14,6 +14,7 @@ class Contact extends Model
         'item_id',
         'name' ,
         'tel' , 
+        'image_file',
 
       ];
 
@@ -22,5 +23,11 @@ class Contact extends Model
       {
         return $this->belongsTo(item::class);
       }
+
+      public function channels()
+
+      {
+        return $this->belongsToMany(Channel::class)->withTimestamps();
+      }  
 
 }

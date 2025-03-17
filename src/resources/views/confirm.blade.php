@@ -38,19 +38,41 @@
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">電話番号</th>
                             <td class="confirm__table__text">{{ $contact['tel__1'] }}{{ $contact['tel__2'] }}{{ $contact['tel__3'] }}</td>
-                            <input type="hidden" name="tel__1" value="{{ $contact['tel__1'] }}">
-                            <input type="hidden" name="tel__2" value="{{ $contact['tel__2'] }}">
-                            <input type="hidden" name="tel__3" value="{{ $contact['tel__3'] }}">
+                                <input type="hidden" name="tel__1" value="{{ $contact['tel__1'] }}">
+                                <input type="hidden" name="tel__2" value="{{ $contact['tel__2'] }}">
+                                <input type="hidden" name="tel__3" value="{{ $contact['tel__3'] }}">
                     </tr>
 
                     <tr class="confirm__table__inner">
-                        <th class="confirm__table__name">お問い合わせの種類</th>
-                        
-                            <td class="confirm__table__text">{{ $item['content'] }}</td>
-                            <input type="text" name="item_content" value="{{$item->item_content}}">
-                            <input type="hidden" name="item_id" value="{{$item->id}}">
-                            
+                        <th class="confirm__table__name">お問い合わせの種類</th>   
+                            <td class="confirm__table__text">{{ $item['content'] }} 
+                                <input type="hidden" name="item_id" value="{{$item->id}}">
+                            </td>
                     </tr>
+
+                    <tr class="confirm__table__inner">
+                        <th class="confirm__table__name">どこで知りましたか？</th>  
+                        
+                            <td class="confirm__table__text">
+                            @foreach($channels as $channel) 
+                            {{ $channel['content'] }}
+                                <input type="hidden" name="channel_contents[]" value="{{$channel->content}}">
+                                <input type="hidden" name="channel_ids[]" value="{{$channel->id}}">
+                                @endforeach
+                            </td>
+                        
+                    </tr>
+                    
+                    <tr class="confirm__table__inner">
+                        <th class="confirm__table__name">アップロード画像</th>
+                            <td class="confirm__table__file">
+                                <img src="{{ '/storage/' . $contact['image_file'] }}">
+                                <input type="hidden" name="image_file" value="{{ $contact['image_file']}} ">
+                            </td>
+                        </th>
+                    </tr>
+
+
 
 
 

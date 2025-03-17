@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration
+class CreateChannelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('channels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->string('name', 255);
-            $table->string('tel', 255);
-            $table->text('image_file', 255);
+            $table->string('content');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('channels');
     }
 }
