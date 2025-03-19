@@ -57,12 +57,12 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $contact = Contact::all();
+        $contacts = Contact::paginate(4);
         $item = Item::all();
 
         $channels = Channel::all();
 
-        return view('admin', compact('contact' , 'item' , 'channels'));
+        return view('admin', compact('contacts' , 'item' , 'channels'));
     }
 
     public function show($id)

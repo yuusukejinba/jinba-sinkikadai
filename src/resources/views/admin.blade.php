@@ -24,43 +24,35 @@
             </div>
         </div>
 
+        <div class="pagination">
+            {{ $contacts->links('pagination::bootstrap-4')}}
+        </div>
+
         <div class="form__table">
             <table class="admin__table">
-                
-                @foreach ($contact as $contact)
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">お名前</th>
-                        <td class="admin__table__data">{{ $contact['name'] }}</td>
-                    </tr>
+                <tr class="admin__table__inner">
+                    <th class="admin__table__header">お名前</th>
+                    <th class="admin__table__header">電話番号</th>
+                    <th class="admin__table__header">お問い合わせの種類</th>
+                    <th class="admin__table__header">知ったきっかけ</th>
+                    <th class="admin__table__header">アップロード画像</th>  
+                </tr>
 
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">電話番号</th>
-                        <td class="admin__table__data">{{ $contact['tel'] }}</td>
-                    </tr>
-
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">お問い合わせの種類</th>
-                        <td class="admin__table__data">{{ $contact->item['content'] }}</td>
-                    </tr>
-                    
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">知ったきっかけ</th>
-                        <td class="admin__table__data">
-                            @foreach($contact->channels as $channel)
-                                {{ $channel['content'] }}
-                            @endforeach
-                        </td>
-                    </tr>
-                    
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">アップロード画像</th>                       
-                        <td class="admin__table__data">
-                            <a href="/admin/contact/{{$contact['id']}}">
-                            <img src="{{ asset('storage/' . $contact['image_file']) }}" 
-                            class="admin_table_image">
-                            </a>
-                        </td>
-                    </tr>
+                @foreach ($contacts as $contact)
+                <tr>                       
+                    <td class="admin__table__data">{{ $contact['name'] }}</td>                                                            
+                    <td class="admin__table__data">{{ $contact['tel'] }}</td>                                                     
+                    <td class="admin__table__data">{{ $contact->item['content'] }}</td>                                                                      
+                    <td class="admin__table__data">
+                        @foreach($contact->channels as $channel)
+                            {{ $channel['content'] }}
+                        @endforeach</td>                                                                                                                    
+                    <td class="admin__table__data">
+                        <a href="/admin/contact/{{$contact['id']}}">
+                        <img src="{{ asset('storage/' . $contact['image_file']) }}" class="admin_table_image">
+                        </a>
+                    </td>
+                </tr>
                 @endforeach
             </table>
         </div>
