@@ -34,12 +34,15 @@
 
                 <div class="form__group__input">
                     <div class="form__group__input__text">
-                        <input type="text" name="name" placeholder="テスト太郎" />
+                        <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name')}}"/>
                     </div>
                 </div>
 
                 <div class="form__Validation">
                     <!--バリデーション機能。-->
+                    @error('name')
+                        {{ $message }} 
+                    @enderror
                 </div>
             </div>
 
@@ -51,14 +54,23 @@
 
                 <div class="form__group__input">
                     <div class="form__group__input__text">
-                        <input type="tel" name="tel__1" placeholder="090" />-
-                        <input type="tel" name="tel__2" placeholder="1234" />-
-                        <input type="tel" name="tel__3" placeholder="5678" />
+                        <input type="tel" name="tel__1" placeholder="090" value="{{ old('tel__1')}}"/>-
+                        <input type="tel" name="tel__2" placeholder="1234" value="{{ old('tel__2')}}"/>-
+                        <input type="tel" name="tel__3" placeholder="5678" value="{{ old('tel__3')}}"/>
                     </div>
                 </div>
 
                 <div class="form__Validation">
                     <!--バリデーション機能-->
+                    @error('tel__1')
+                        {{ $message }} 
+                    @enderror
+                    @error('tel__2')
+                        {{ $message }} 
+                    @enderror
+                    @error('tel__3')
+                        {{ $message }} 
+                    @enderror
                 </div>
             </div>
 
@@ -70,7 +82,7 @@
                    
                 <div>
                     <select class="form__group__input__select " name="item_id" >
-                        <option class="form__group__input__select__title" disabled selected>問い合わせの部品を選択</option>
+                        <option class="form__group__input__select__title" disabled selected >問い合わせの部品を選択</option>
                         @foreach($items as $item)
                         <option value="{{$item->id}} {{$item->content}}">{{$item->content}}</option>
                         @endforeach
@@ -79,6 +91,9 @@
 
                 <div class="form__Validation">
                     <!--バリデーション機能-->
+                    @error('item_id')
+                        {{ $message }} 
+                    @enderror
                 </div>
             </div>
 
@@ -97,6 +112,9 @@
 
                 <div class="form__Validation">
                     <!--バリデーション機能-->
+                    @error('channel_ids')
+                        {{ $message }} 
+                    @enderror
                 </div>
             </div>
 

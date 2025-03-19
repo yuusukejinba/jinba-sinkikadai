@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Item;
 use App\Models\Channel;
+
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -19,7 +20,7 @@ class ContactController extends Controller
 
     
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         
         
@@ -34,7 +35,7 @@ class ContactController extends Controller
         return view('confirm' , compact('contact' , 'item' , 'channels'));
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         $request['tel'] = $request->tel__1 . $request->tel__2 . $request->tel__3;
         
@@ -59,13 +60,15 @@ class ContactController extends Controller
         $contact = Contact::all();
         $item = Item::all();
 
+        $channels = Channel::all();
 
-
-        return view('admin', compact('contact' , 'item'));
+        return view('admin', compact('contact' , 'item' , 'channels'));
     }
+
+    public function show($id)
+{
+    $contact = Contact::find($id);
+    return view('detail', compact('contact'));
 }
 
-
-
-
-
+}

@@ -40,19 +40,25 @@
 
                     <tr class="admin__table__inner">
                         <th class="admin__table__header">お問い合わせの種類</th>
-                        <td class="admin__table__data">{{ $contact['item_id'] }}</td>
-                    </tr>
-
-                    <tr class="admin__table__inner">
-                        <th class="admin__table__header">知ったきっかけ</th>
-                        <td class="admin__table__data">{{ $contact['channel_ids'] }}</td>
+                        <td class="admin__table__data">{{ $contact->item['content'] }}</td>
                     </tr>
                     
                     <tr class="admin__table__inner">
-                        <th class="admin__table__header">アップロード画像</th>
+                        <th class="admin__table__header">知ったきっかけ</th>
                         <td class="admin__table__data">
-                            <img src="{{ asset('storage/' . $contact['image_file']) }}" >
-                            
+                            @foreach($contact->channels as $channel)
+                                {{ $channel['content'] }}
+                            @endforeach
+                        </td>
+                    </tr>
+                    
+                    <tr class="admin__table__inner">
+                        <th class="admin__table__header">アップロード画像</th>                       
+                        <td class="admin__table__data">
+                            <a href="/admin/contact/{{$contact['id']}}">
+                            <img src="{{ asset('storage/' . $contact['image_file']) }}" 
+                            class="admin_table_image">
+                            </a>
                         </td>
                     </tr>
                 @endforeach
