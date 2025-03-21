@@ -34,7 +34,7 @@
 
                 <div class="form__group__input">
                     <div class="form__group__input__text">
-                        <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name')}}"/>
+                        <input class="form__group__input__text--text" type="text" name="name" placeholder="テスト太郎" value="{{ old('name')}}"/>
                     </div>
                 </div>
 
@@ -54,9 +54,9 @@
 
                 <div class="form__group__input">
                     <div class="form__group__input__text">
-                        <input type="tel" name="tel__1" placeholder="090" value="{{ old('tel__1')}}"/>-
-                        <input type="tel" name="tel__2" placeholder="1234" value="{{ old('tel__2')}}"/>-
-                        <input type="tel" name="tel__3" placeholder="5678" value="{{ old('tel__3')}}"/>
+                        <input class="form__group__input__text--text" type="tel" name="tel__1" placeholder="090" value="{{ old('tel__1')}}"/>-
+                        <input class="form__group__input__text--text" type="tel" name="tel__2" placeholder="1234" value="{{ old('tel__2')}}"/>-
+                        <input class="form__group__input__text--text" type="tel" name="tel__3" placeholder="5678" value="{{ old('tel__3')}}"/>
                     </div>
                 </div>
 

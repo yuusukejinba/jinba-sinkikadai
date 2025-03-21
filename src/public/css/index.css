@@ -34,6 +34,7 @@ padding: 20px;
 
 .form__group__input{
     padding: 10px;
+    
 }
 
 .form__group__required{
@@ -46,8 +47,17 @@ padding: 20px;
     
 }
 
+
+
 .form__button{
+    padding-top: 50px;
     text-align: center;
     
+}
+
+.form__button-submit{
+    font-size: 15px;
+    background-color: rgb(117, 119, 118);
+    color: rgb(252, 251, 251);
 }
 
