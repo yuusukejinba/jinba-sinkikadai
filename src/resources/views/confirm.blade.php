@@ -66,7 +66,7 @@
                     <tr class="confirm__table__inner">
                         <th class="confirm__table__name">アップロード画像</th>
                             <td class="confirm__table__file">
-                                <img src="{{ '/storage/' . $contact['image_file'] }}">
+                                <img class="confirm__image_file" src="{{ '/storage/' . $contact['image_file'] }}">
                                 <input type="hidden" name="image_file" value="{{ $contact['image_file']}} ">
                             </td>
                         </th>

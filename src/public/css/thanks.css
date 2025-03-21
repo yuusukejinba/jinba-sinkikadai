@@ -1,0 +1,12 @@
+.thanks-form{
+    text-align: center;
+    font-size: 30px;
+}
+
+.thanks__back{
+    padding: 8px 12px;
+    border: 1px solid #080808;
+    background-color: #e9dbdb;
+    color: #0f0f0f;
+    text-decoration: none;
+}

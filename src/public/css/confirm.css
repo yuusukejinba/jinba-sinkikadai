@@ -1,0 +1,63 @@
+.confirm__image_file{
+    width: 120px;
+
+}
+.header{
+    justify-content: center;
+    display: flex;
+}
+
+.confirm-form__main{
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+
+}
+
+.form__table{
+    
+    justify-content: center;
+    display: flex;
+}
+
+.confirm__table__name{
+    border: 1px solid #111111;
+    padding: 10px ;
+    width: 200px;
+    text-align: center;
+    background-color: rgb(113, 114, 114);
+    color: white;
+}
+
+.confirm__table__text{
+    width: 400px ;
+    border: 1px solid #111111;
+    padding: 20px  auto;
+   padding-left: 30px;
+   
+}
+
+.form__button{
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+}
+
+.confirm__table__file{
+    border: 1px solid #111111;
+}
+
+.confirm__image_file{
+
+    
+    
+    padding: 20px  auto;
+   padding-left: 30px;
+   margin: 10px;
+}
+
+.form__button-submit{
+font-size: 15px;
+background-color: rgb(117, 119, 118);
+color: rgb(252, 251, 251);
+}
