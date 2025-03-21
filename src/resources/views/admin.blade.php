@@ -18,44 +18,61 @@
     </header>
 
     <main>
-        <div class="contact-form__main">
-            <div class="contact-form__head">
-                <h2>Admin</h2>
+            <div class="contact-form__main">
+                <div class="contact-form__head">
+                    <h2>Admin</h2>
+                </div>
             </div>
-        </div>
 
-        <div class="pagination">
-            {{ $contacts->links('pagination::bootstrap-4')}}
-        </div>
+        <form action="/admin/search" method="get">
+            @csrf
+            <div class="contact-form__search">
+                <div class="contact-form__search__text">
+                    <textarea name="keyword" cols="25" rows="2" placeholder="検索内容を入力してください"></textarea>
+                </div>
 
-        <div class="form__table">
-            <table class="admin__table">
-                <tr class="admin__table__inner">
-                    <th class="admin__table__header">お名前</th>
-                    <th class="admin__table__header">電話番号</th>
-                    <th class="admin__table__header">お問い合わせの種類</th>
-                    <th class="admin__table__header">知ったきっかけ</th>
-                    <th class="admin__table__header">アップロード画像</th>  
-                </tr>
+                <div class="contact-form__search__button">
+                    <button class="form__button-submit" type="submit">検索</button>
+                </div>
+            </div>
+        
 
-                @foreach ($contacts as $contact)
-                <tr>                       
-                    <td class="admin__table__data">{{ $contact['name'] }}</td>                                                            
-                    <td class="admin__table__data">{{ $contact['tel'] }}</td>                                                     
-                    <td class="admin__table__data">{{ $contact->item['content'] }}</td>                                                                      
-                    <td class="admin__table__data">
-                        @foreach($contact->channels as $channel)
-                            {{ $channel['content'] }}
-                        @endforeach</td>                                                                                                                    
-                    <td class="admin__table__data">
-                        <a href="/admin/contact/{{$contact['id']}}">
-                        <img src="{{ asset('storage/' . $contact['image_file']) }}" class="admin_table_image">
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
-            </table>
-        </div>
+            <div class="pagination">
+                {{ $contacts->links('pagination::bootstrap-4')}}
+            </div>
+
+            <div class="form__table">
+                <table class="admin__table">
+                    <tr class="admin__table__inner">
+                        <th class="admin__table__header">お名前</th>
+                        <th class="admin__table__header">電話番号</th>
+                        <th class="admin__table__header">お問い合わせの種類</th>
+                        <th class="admin__table__header">知ったきっかけ</th>
+                        <th class="admin__table__header">アップロード画像</th>  
+                        <th class="admin__table__header"></th>  
+                    </tr>
+
+                    @foreach ($contacts as $contact)
+                    <tr>                       
+                        <td class="admin__table__data">{{ $contact['name'] }}</td>                                                            
+                        <td class="admin__table__data">{{ $contact['tel'] }}</td>                                                     
+                        <td class="admin__table__data">{{ $contact->item['content'] }}</td>                                                                      
+                        <td class="admin__table__data">
+                            @foreach($contact->channels as $channel)
+                                {{ $channel['content'] }}
+                            @endforeach</td>                                                                                                                    
+                        <td class="admin__table__data">
+                            <img src="{{ asset('storage/' . $contact['image_file']) }}" class="admin_table_image">
+                            </a>
+                        </td>
+                        <td class="admin__table__data">
+                            <a class="admin__detail-btn" href="/admin/contact/{{$contact['id']}}">詳細</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </form>
     </main>
 </body>
 

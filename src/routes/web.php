@@ -20,6 +20,8 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::get('/admin', [ContactController::class, 'admin']);
 Route::get('/admin/contact/{id}', [ContactController::class, 'show']);
+Route::get('/admin/search', [ContactController::class, 'search']);
+
 
 
 

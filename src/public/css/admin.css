@@ -12,8 +12,7 @@
 
 .admin_table_image  {
     width: 100px;
-    margin-left: 10%;
-    margin-right: 10%;
+    border: 1px solid #0c0c0c;
 }
 
 .admin__table {
@@ -22,11 +21,12 @@
 }
 
 .admin__table__header {
-    border: 1px solid #e0dfde;
+    border: 1px solid #0c0c0c;
     background-color: #8b7969;
     color: #fff;
-    text-align: left;
+    text-align: center;
     font-weight: 400;
+    padding: 10px;
 }
 
 .admin__table__inner {
@@ -34,8 +34,19 @@
 }
 
 .admin__table__data {
-    border: 1px solid #e0dfde;
-   
+    border: 1px solid #111111;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: rgb(209, 233, 233);
+}
+
+.admin__detail-btn {
+    padding: 8px 12px;
+    border: 1px solid #080808;
+    background-color: #e9dbdb;
+    color: #0f0f0f;
+    text-decoration: none;
+    
 }
 
 .pagination {
@@ -69,3 +80,19 @@
     background-color: #82756a;
     border-color: #82756a;
 }
+
+.contact-form__search{
+    display: flex;
+    justify-content: right;
+    width: 1000px;
+    max-width: 80% ;
+    
+}
+
+.form__button-submit{
+    padding: 5px ;
+    margin-left: 10px;
+}
+    
+   
+

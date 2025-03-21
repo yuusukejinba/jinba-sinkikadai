@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Item;
 use App\Models\Channel;
+use Illuminate\Http\Request;
 
 use App\Http\Requests\ContactRequest;
 
@@ -69,6 +70,18 @@ class ContactController extends Controller
 {
     $contact = Contact::find($id);
     return view('detail', compact('contact'));
+}
+
+public function search(Request $request)
+{
+    $query = Contact::where('name', 'LIKE',  "%" . $request->keyword . "%");
+    $contacts = $query->paginate(4);
+    $item = Item::all();
+
+    $channels = Channel::all();
+
+    return view('admin', compact('contacts' , 'item' , 'channels'));
+
 }
 
 }

@@ -1,0 +1,53 @@
+.header{
+    justify-content: center;
+    display: flex;
+}
+
+.contact-form__main{
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+
+}
+
+
+.form__group{
+    width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+    display: flex;
+    
+}
+
+.form__group__detail{
+    text-align: left;
+    width: 250px;
+    
+    padding: 10px;
+    
+}
+
+.form__group__label{
+padding: 20px;
+
+}
+
+.form__group__input{
+    padding: 10px;
+}
+
+.form__group__required{
+    color: red;
+}
+
+.form__group__input__file__comment{
+    text-align: left;
+    font-size: 12px;
+    
+}
+
+.form__button{
+    text-align: center;
+    
+}
+

@@ -28,8 +28,8 @@
             @csrf
             <div class="form__image">
                 <div class="form__image__title">【アップロード画像】</div>
-                    <div class="form__image__file">
-                        <img src="{{ '/storage/' . $contact['image_file'] }}">
+                    <div >
+                        <img src="{{ '/storage/' . $contact['image_file'] }}" class="form__image__file">
                         <input type="hidden" name="image_file" value="{{ $contact['image_file']}} ">
                     </div>
                 </div>
