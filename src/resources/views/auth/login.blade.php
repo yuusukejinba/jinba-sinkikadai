@@ -29,6 +29,7 @@
         </div>
 
         <form class="form" action="/login" method="post">
+            @csrf
             <div class="form__group">
                 <div class="form__group__title">
                     <span class="form__group__label">メールアドレス</span>

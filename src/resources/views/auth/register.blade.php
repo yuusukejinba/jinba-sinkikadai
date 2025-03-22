@@ -84,6 +84,18 @@
                 </div>
             </div>
 
+            <div class="form__group">
+                <div class="form__group__title">
+                    <span class="form__group__label">確認用パスワード</span>
+                </div>
+
+                <div class="form__group__input">
+                    <div class="form__group__text">
+                        <input type="password" name="password_confirmation">
+                    </div>
+                </div>
+            </div>
+
             <div class="form__button">
                 <button class="form__button-submit" type="submit">登録</button>
             </div>
