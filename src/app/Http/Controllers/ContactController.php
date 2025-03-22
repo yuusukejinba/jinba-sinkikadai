@@ -15,7 +15,7 @@ class ContactController extends Controller
     {
         $items = Item::all();
         $channels = Channel::all();
-        
+
         return view('index' , compact('items' , 'channels'));
     }
 
@@ -23,35 +23,26 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        
-        
 
         $contact = $request->all();
         $item = Item::find($request->item_id);
         $channels = Channel::find($request->channel_ids);
-         
         $contact['image_file'] = $request->image_file->store('img','public');
-        
-        
+
         return view('confirm' , compact('contact' , 'item' , 'channels'));
     }
 
     public function store(ContactRequest $request)
     {
         $request['tel'] = $request->tel__1 . $request->tel__2 . $request->tel__3;
-        
         $form = [
             'item_id' => $request->item_id,   
             'name' => $request->name,           
             'tel' => $request->tel,
             'image_file' => $request->image_file,
         ];    
-        
         $contact = Contact::create($form);
         $contact->channels()->sync($request->channel_ids);      
-       
-
-        
 
         return view('thanks');
     }
@@ -60,7 +51,6 @@ class ContactController extends Controller
     {
         $contacts = Contact::paginate(4);
         $item = Item::all();
-
         $channels = Channel::all();
 
         return view('admin', compact('contacts' , 'item' , 'channels'));
@@ -69,6 +59,7 @@ class ContactController extends Controller
     public function show($id)
 {
     $contact = Contact::find($id);
+
     return view('detail', compact('contact'));
 }
 
@@ -77,11 +68,9 @@ public function search(Request $request)
     $query = Contact::where('name', 'LIKE',  "%" . $request->keyword . "%");
     $contacts = $query->paginate(4);
     $item = Item::all();
-
     $channels = Channel::all();
 
     return view('admin', compact('contacts' , 'item' , 'channels'));
-
 }
 
 }
