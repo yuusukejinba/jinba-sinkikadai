@@ -22,6 +22,11 @@
                 <div class="contact-form__head">
                     <h2>Admin</h2>
                 </div>
+                
+                <form action="/logout" method="post">
+                    @csrf
+                    <input class="header__link" type="submit" value="logout">
+                </form>
             </div>
 
         <form action="/admin/search" method="get">
