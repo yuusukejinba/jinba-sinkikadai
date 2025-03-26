@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Item;
 use App\Models\Channel;
-use Illuminate\Http\Request;
+use App\Models\Profile;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class ContactController extends Controller
 {
@@ -73,4 +76,24 @@ public function search(Request $request)
     return view('admin', compact('contacts' , 'item' , 'channels'));
 }
 
+public function profile()
+{
+    $profiles = Profile::all();
+    return view('profile', compact('profiles'));
+}
+
+
+public function register(Request $request)
+{
+    $profiles = Profile::all();
+    $form = [
+        'user_id' => Auth::id(),
+        'position' => $request->position,           
+        'gender' => $request->gender,
+        
+    ];    
+    $profiles = Profile::create($form);
+
+    return view('admin', compact('profiles'));
+}
 }
