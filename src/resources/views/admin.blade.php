@@ -59,7 +59,7 @@
 
                     @foreach ($contacts as $contact)
                     <tr>                       
-                        <td class="admin__table__data">{{ $contacts['name'] }}</td>                                                            
+                        <td class="admin__table__data">{{ $contact['name'] }}</td>                                                            
                         <td class="admin__table__data">{{ $contact['tel'] }}</td>                                                     
                         <td class="admin__table__data">{{ $contact->item['content'] }}</td>                                                                      
                         <td class="admin__table__data">

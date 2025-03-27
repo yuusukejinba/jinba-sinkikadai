@@ -85,7 +85,9 @@ public function profile()
 
 public function register(Request $request)
 {
+    $contact = $request->all();
     $profiles = Profile::all();
+    
     $form = [
         'user_id' => Auth::id(),
         'position' => $request->position,           
@@ -94,6 +96,6 @@ public function register(Request $request)
     ];    
     $profiles = Profile::create($form);
 
-    return view('admin', compact('profiles'));
+    return redirect('admin');
 }
 }
